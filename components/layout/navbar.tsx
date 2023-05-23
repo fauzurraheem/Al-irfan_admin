@@ -18,7 +18,7 @@ const Navbar:React.FC<props> = ({setOpenBar}) => {
  
   return (
     <nav className='fixed lg:z-40 lg:h-[100px] flex w-full bg-white'>
-      <div className='lg:min-w-[288px] h-full px-5 py-10 lg:p-9  font-normal text-2xl'>
+      <div className='lg:min-w-[288px] h-full px-5 py-10 lg:p-9  font-normal text-2xl bg-emerald-600 text-white'>
         Al-Irfan
       </div>
       <div className='lg:flex items-center justify-between w-full p-9 hidden'>

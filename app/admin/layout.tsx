@@ -27,7 +27,7 @@ export default function RootLayout({
         </div>
         <Navbar setOpenBar={setOpenBar} />
         <Sidebar openBar={openBar} setOpenBar={setOpenBar} />
-        <div className='lg:pl-[288px] lg:pt-[100px] pt-[112px] h-screen overflow-y-auto scrollbar-hide'>
+        <div className='lg:pl-[288px] lg:pt-[100px] pt-[112px]'>
         {children}
         </div>
       </>

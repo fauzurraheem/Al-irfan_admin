@@ -47,7 +47,6 @@ const Sidebar:React.FC<props> = ({setOpenBar, openBar}) => {
 
   const setValues= (page:string, list:data) => {
     setCurrent(page)
-    setOpenBar(prev => !prev);
     setOpenBranch(prev => !prev)
     if(!list.open == true){
       list.open = true
@@ -64,7 +63,7 @@ const Sidebar:React.FC<props> = ({setOpenBar, openBar}) => {
 
 
   return (
-    <div className={`h-screen overflow-y-auto scrollbar-hide lg:pt-[100px] min-w-[288px] fixed lg:border-r border-[#D7D7D7] ${openBar ? 'block' : 'hidden'} ${openBar ? 'z-30' : 'z-0'} lg:block bg-white`}>
+    <div className={` bg-gray-700 text-[#EDE6DB] h-screen  scrollbar-hide lg:pt-[100px] min-w-[288px] fixed ${openBar ? 'block' : 'hidden'} ${openBar ? 'z-30' : 'z-0'} lg:block bg-white`}>
       <div className='p-6 flex justify-end pb-0 lg:hidden cursor-pointer' onClick={closeBar}>
         <AiOutlineCloseCircle size={30}   />  
       </div>
@@ -72,18 +71,18 @@ const Sidebar:React.FC<props> = ({setOpenBar, openBar}) => {
         {treeData.map((list, i) => (
             <div>
               <div key={i}
-              className={` p-3 px-9  flex gap-6 items-center hover:bg-black/[0.05]  text-black border-b  cursor-pointer text-base font-medium`} 
+              className={` p-3 px-9  flex gap-6 items-center hover:bg-black/[0.05]  border-b  border-black cursor-pointer text-base font-medium`} 
               onClick={(e) => setValues(list.parent, list)}
               >
-                <list.icon size={30} />
+                <list.icon size={30} color='#10b981' />
                 <p>{list.page}</p>
                 <MdOutlineArrowForwardIos className='ml-auto' />
 
               </div>
               {list.open && list.branch?.map((branch,i) => (
-                <Link href=''>
-                  <div key={i}
-                  className={` p-3 pl-[80px] bg-emerald-300  flex gap-2 items-center hover:bg-black/[0.05] text-black  cursor-pointer text-sm font-medium`}
+                <Link href='' key={i} >
+                  <div
+                  className={` p-3 pl-[80px] bg-gray-500  flex gap-2 items-center hover:bg-gray-700  cursor-pointer text-sm font-medium`}
                   >
                     <MdOutlineArrowForwardIos />
                     <p>{branch.branch}</p>
@@ -95,7 +94,7 @@ const Sidebar:React.FC<props> = ({setOpenBar, openBar}) => {
             
         ))}
       </div>
-      <div className='flex flex-col gap-7 p-8 border-t border-[#D7D7D7] lg:hidden '>
+      <div className='flex flex-col gap-7 p-8 border-t lg:hidden '>
         <div className='flex items-center gap-3  cursor-pointer'>
           <BsBellFill  size={30}  />
           <p className='font-medium text-base'>Notifications</p>
